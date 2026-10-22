@@ -385,6 +385,11 @@ body.entrando .tela-convite {
 }
 
 .acao {
+  border: 0;
+  background: none;
+  font: inherit;
+  cursor: pointer;
+  padding: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -486,3 +491,92 @@ body.entrando .tela-convite {
   .tela-convite { transform: none; opacity: 0; }
   body.entrando .tela-convite { opacity: 1; transition: opacity .4s ease; }
 }
+
+/* ---- confirmação de presença ---- */
+.rsvp-fundo {
+  position: fixed;
+  inset: 0;
+  z-index: 20;
+  display: grid;
+  place-items: end center;
+  padding: 16px;
+  background: rgba(62, 36, 22, .45);
+  animation: rsvpFundo .3s ease;
+}
+.rsvp-fundo[hidden] { display: none; }
+@keyframes rsvpFundo { from { opacity: 0; } }
+
+.rsvp {
+  position: relative;
+  width: min(100%, 400px);
+  padding: 28px 24px calc(24px + env(safe-area-inset-bottom, 0px));
+  border-radius: 24px;
+  background: var(--papel);
+  border: 1.5px solid var(--dourado);
+  box-shadow: 0 20px 40px -16px rgba(62, 36, 22, .5);
+  text-align: center;
+  color: var(--marrom);
+  animation: rsvpSobe .45s cubic-bezier(.2, .8, .2, 1);
+}
+@keyframes rsvpSobe { from { transform: translateY(40px); opacity: 0; } }
+
+.rsvp-fechar {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 28px;
+  line-height: 1;
+  color: var(--marrom);
+}
+
+.rsvp-titulo { font-weight: 900; font-size: 30px; color: var(--vinho); }
+.rsvp-sub { font-family: var(--fonte-mao); font-size: 22px; margin: 4px 0 20px; }
+
+.rsvp-campo { display: flex; flex-direction: column; gap: 8px; margin-bottom: 18px; text-align: left; }
+.rsvp-campo > span { font-weight: 700; font-size: 15px; }
+.rsvp-campo input {
+  font: inherit;
+  font-size: 17px;
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1.5px solid var(--bege);
+  background: #fff;
+  color: var(--marrom);
+}
+.rsvp-campo input:focus { outline: none; border-color: var(--dourado); }
+
+.rsvp-contador { display: flex; align-items: center; gap: 18px; }
+.rsvp-contador button {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1.5px solid var(--dourado);
+  font-size: 24px;
+  line-height: 1;
+  color: var(--marrom);
+  background: rgba(230, 211, 179, .4);
+}
+.rsvp-contador output { min-width: 32px; text-align: center; font-weight: 900; font-size: 28px; color: var(--vinho); }
+
+.rsvp-enviar {
+  display: block;
+  width: 100%;
+  margin-top: 6px;
+  padding: 15px;
+  border-radius: 999px;
+  background: var(--marrom);
+  color: var(--dourado-claro);
+  border: 2px solid var(--dourado);
+  font: inherit;
+  font-weight: 700;
+  font-size: 17px;
+  text-decoration: none;
+  cursor: pointer;
+}
+.rsvp-enviar:disabled { opacity: .6; cursor: wait; }
+
+.rsvp-erro { margin: -8px 0 14px; font-size: 14px; font-weight: 700; color: var(--vinho); text-align: left; }
+#rsvpErroEnvio { margin: 12px 0 0; text-align: center; }

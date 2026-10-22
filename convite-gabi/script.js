@@ -10,11 +10,13 @@ const CONFIG = {
   playlist: "https://open.spotify.com/playlist/5MaOGSL6HclcesfUGqnuGZ?si=zH2oFz7BTTW6oaxx_TpZuA&utm_source=copy-link&pt=8c03459169b79f03438d899167aef3ea&pi=eIUnNLvDTvyWM",
   dataFesta: "2026-11-14T13:00:00-03:00", // horário de Brasília
   volume: 0.3, // 0 a 1
+
+  // Link do Apps Script da planilha de presença (veja o arquivo planilha-presenca.gs)
+  planilhaPresenca: "https://script.google.com/macros/s/AKfycbzq_krTjMzaN6_q2C5TmfOCbzv6qjvG9lwVCfu5XyCQrR3wXDwnWquNNyHQA00AVg0vAw/exec",
+  maxPessoas: 3,
 };
 
 // ---------- Links dos botões ----------
-document.getElementById("linkConfirmar").href =
-  `https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent(CONFIG.mensagemWhatsapp)}`;
 
 document.getElementById("linkLocal").href =
   `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(CONFIG.endereco)}`;
@@ -132,3 +134,71 @@ function atualizarContagem() {
 
 const timerContagem = setInterval(atualizarContagem, 1000);
 atualizarContagem();
+
+// ---------- Confirmação de presença ----------
+const rsvpFundo = document.getElementById("rsvpFundo");
+const rsvpForm = document.getElementById("rsvpForm");
+const rsvpNome = document.getElementById("rsvpNome");
+const rsvpPessoas = document.getElementById("rsvpPessoas");
+const rsvpEnviar = document.getElementById("rsvpEnviar");
+const rsvpErroNome = document.getElementById("rsvpErroNome");
+const rsvpErroEnvio = document.getElementById("rsvpErroEnvio");
+let pessoas = 1;
+
+function abrirRsvp() {
+  rsvpFundo.hidden = false;
+  setTimeout(() => rsvpNome.focus(), 300);
+}
+function fecharRsvp() {
+  rsvpFundo.hidden = true;
+}
+
+document.getElementById("botaoConfirmar").addEventListener("click", abrirRsvp);
+document.getElementById("rsvpFechar").addEventListener("click", fecharRsvp);
+rsvpFundo.addEventListener("click", (e) => { if (e.target === rsvpFundo) fecharRsvp(); });
+document.addEventListener("keydown", (e) => { if (e.key === "Escape" && !rsvpFundo.hidden) fecharRsvp(); });
+
+function mudarPessoas(delta) {
+  pessoas = Math.min(CONFIG.maxPessoas, Math.max(1, pessoas + delta));
+  rsvpPessoas.textContent = pessoas;
+}
+document.getElementById("rsvpMenos").addEventListener("click", () => mudarPessoas(-1));
+document.getElementById("rsvpMais").addEventListener("click", () => mudarPessoas(1));
+
+rsvpNome.addEventListener("input", () => { rsvpErroNome.hidden = true; });
+
+rsvpForm.addEventListener("submit", async (e) => {
+  e.preventDefault();
+  const nome = rsvpNome.value.trim();
+  if (!nome) {
+    rsvpErroNome.hidden = false;
+    rsvpNome.focus();
+    return;
+  }
+
+  rsvpErroEnvio.hidden = true;
+  rsvpEnviar.disabled = true;
+  rsvpEnviar.textContent = "Enviando...";
+
+  try {
+    // "text/plain" e "no-cors" evitam o bloqueio de segurança do navegador com o Google
+    await fetch(CONFIG.planilhaPresenca, {
+      method: "POST",
+      mode: "no-cors",
+      headers: { "Content-Type": "text/plain;charset=utf-8" },
+      body: JSON.stringify({ nome, pessoas }),
+    });
+
+    const texto = pessoas === 1 ? "Te esperamos lá!" : `Te esperamos lá, vocês ${pessoas}!`;
+    document.getElementById("rsvpOkTexto").textContent = texto;
+    const recado = `Oi! Confirmei presença no aniversário de 20 anos da Gabi (${pessoas} ${pessoas === 1 ? "pessoa" : "pessoas"}). Nome: ${nome} 🧡`;
+    document.getElementById("rsvpWhats").href = `https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent(recado)}`;
+    rsvpForm.hidden = true;
+    document.getElementById("rsvpOk").hidden = false;
+  } catch (erro) {
+    rsvpErroEnvio.hidden = false;
+  } finally {
+    rsvpEnviar.disabled = false;
+    rsvpEnviar.textContent = "Confirmar presença";
+  }
+});
