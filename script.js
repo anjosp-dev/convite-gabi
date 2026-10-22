@@ -191,7 +191,10 @@ rsvpForm.addEventListener("submit", async (e) => {
 
     const texto = pessoas === 1 ? "Te esperamos lá!" : `Te esperamos lá, vocês ${pessoas}!`;
     document.getElementById("rsvpOkTexto").textContent = texto;
-    const recado = `Oi! Confirmei presença no aniversário de 20 anos da Gabi (${pessoas} ${pessoas === 1 ? "pessoa" : "pessoas"}). Nome: ${nome} 🧡`;
+    const acompanhantes = ["", " e mais uma pessoa", " e mais duas pessoas"][pessoas - 1];
+    const recado = pessoas === 1
+      ? `Oi! Aqui é ${nome}, confirmei minha presença no aniversário de 20 anos da Gabi! 🧡`
+      : `Oi! Aqui é ${nome}, confirmei presença no aniversário de 20 anos da Gabi: eu${acompanhantes}! 🧡`;
     document.getElementById("rsvpWhats").href = `https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent(recado)}`;
     rsvpForm.hidden = true;
     document.getElementById("rsvpOk").hidden = false;
