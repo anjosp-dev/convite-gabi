@@ -180,10 +180,10 @@
     </div>
 
     <nav class="acoes" aria-label="Ações do convite">
-      <a class="acao" id="linkConfirmar" target="_blank" rel="noopener">
+      <button class="acao" id="botaoConfirmar" type="button">
         <span class="acao-circulo"><svg><use href="#icone-check"/></svg></span>
         <span class="acao-texto">Confirmar<br>presença</span>
-      </a>
+      </button>
       <a class="acao" id="linkLocal" target="_blank" rel="noopener">
         <span class="acao-circulo"><svg><use href="#icone-local"/></svg></span>
         <span class="acao-texto">Local<br>da festa</span>
@@ -198,6 +198,43 @@
     <p class="rodape">coloca sua música na playlist, ela vai tocar na festa!</p>
     </div>
   </main>
+
+
+  <!-- ===== Janela de confirmação de presença ===== -->
+  <div class="rsvp-fundo" id="rsvpFundo" hidden>
+    <div class="rsvp" role="dialog" aria-modal="true" aria-labelledby="rsvpTitulo">
+      <button class="rsvp-fechar" id="rsvpFechar" type="button" aria-label="Fechar">×</button>
+
+      <form id="rsvpForm" novalidate>
+        <h3 class="rsvp-titulo" id="rsvpTitulo">Vai com a gente?</h3>
+        <p class="rsvp-sub">Confirma aqui pra gente saber quantos vão</p>
+
+        <label class="rsvp-campo">
+          <span>Seu nome</span>
+          <input id="rsvpNome" name="nome" type="text" autocomplete="name" placeholder="Maria Silva" maxlength="80">
+        </label>
+        <p class="rsvp-erro" id="rsvpErroNome" hidden>Escreva seu nome pra confirmar.</p>
+
+        <div class="rsvp-campo">
+          <span>Quantas pessoas, contando você?</span>
+          <div class="rsvp-contador">
+            <button type="button" id="rsvpMenos" aria-label="Diminuir">−</button>
+            <output id="rsvpPessoas" aria-live="polite">1</output>
+            <button type="button" id="rsvpMais" aria-label="Aumentar">+</button>
+          </div>
+        </div>
+
+        <button class="rsvp-enviar" id="rsvpEnviar" type="submit">Confirmar presença</button>
+        <p class="rsvp-erro" id="rsvpErroEnvio" hidden>Não deu pra enviar agora. Confere sua internet e tenta de novo.</p>
+      </form>
+
+      <div class="rsvp-ok" id="rsvpOk" hidden>
+        <h3 class="rsvp-titulo">Presença confirmada!</h3>
+        <p class="rsvp-sub" id="rsvpOkTexto"></p>
+        <a class="rsvp-enviar" id="rsvpWhats" target="_blank" rel="noopener">Mandar um recado no WhatsApp</a>
+      </div>
+    </div>
+  </div>
 
   <script src="script.js"></script>
 </body>
