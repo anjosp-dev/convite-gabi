@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Gabi 20 · Convite</title>
+  <meta name="description" content="O último capítulo da infância. Sábado, 14 de novembro, a partir das 13h.">
+
+  <!-- Prévia no WhatsApp: depois de subir no GitHub Pages, troque pelo endereço completo da imagem
+       ex.: https://seuusuario.github.io/convite-gabi/assets/gabi.jpg -->
+  <meta property="og:title" content="Gabi 20 · Você está convidado!">
+  <meta property="og:description" content="O último capítulo da infância. Sábado, 14/11, a partir das 13h.">
+  <meta property="og:image" content="assets/gabi.jpg">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#F5EADB">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧡</text></svg>">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Fredoka:wght@600;700&family=Playfair+Display:ital,wght@0,500;0,700;0,900;1,700;1,900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ===== Desenhos reutilizáveis (estilo giz de cera) ===== -->
+  <svg class="sprite" aria-hidden="true" focusable="false">
+    <defs>
+      <filter id="giz">
+        <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="2" result="ruido"/>
+        <feDisplacementMap in="SourceGraphic" in2="ruido" scale="3"/>
+      </filter>
+    </defs>
+
+    <symbol id="sol" viewBox="0 0 120 120">
+      <g stroke="#C4532D" stroke-width="6" stroke-linecap="round">
+        <path d="M60 6v16M60 98v16M6 60h16M98 60h16M22 22l11 11M87 87l11 11M98 22 87 33M33 87 22 98"/>
+      </g>
+      <circle cx="60" cy="60" r="27" fill="#F29E4C" stroke="#C4532D" stroke-width="5"/>
+      <path d="M50 57q3-4 6 0M64 57q3-4 6 0M50 68q10 9 20 0" fill="none" stroke="#5C3522" stroke-width="3.5" stroke-linecap="round"/>
+    </symbol>
+
+    <symbol id="laranja" viewBox="0 0 120 120">
+      <circle cx="60" cy="60" r="50" fill="#C4532D"/>
+      <circle cx="60" cy="60" r="42" fill="#F7E1C3"/>
+      <circle cx="60" cy="60" r="37" fill="#F29E4C"/>
+      <g stroke="#F7E1C3" stroke-width="4" stroke-linecap="round">
+        <path d="M60 25v70M25 60h70M35 35l50 50M85 35 35 85"/>
+      </g>
+      <circle cx="60" cy="60" r="5" fill="#F7E1C3"/>
+    </symbol>
+
+    <symbol id="catavento" viewBox="0 0 120 160">
+      <path d="M60 60 L60 155" stroke="#5C3522" stroke-width="6" stroke-linecap="round"/>
+      <path d="M60 60 L60 10 Q88 22 60 60Z" fill="#9E2A2B"/>
+      <path d="M60 60 L110 60 Q98 88 60 60Z" fill="#D9B45F"/>
+      <path d="M60 60 L60 110 Q32 98 60 60Z" fill="#C4532D"/>
+      <path d="M60 60 L10 60 Q22 32 60 60Z" fill="#E6D3B3" stroke="#9C7A2E" stroke-width="3"/>
+      <circle cx="60" cy="60" r="6" fill="#5C3522"/>
+    </symbol>
+
+    <symbol id="picole" viewBox="0 0 80 150">
+      <rect x="34" y="92" width="12" height="52" rx="6" fill="#E8C79A" stroke="#5C3522" stroke-width="3"/>
+      <path d="M12 40a28 28 0 0 1 56 0v52a8 8 0 0 1-8 8H20a8 8 0 0 1-8-8Z" fill="#F29E4C" stroke="#9E2A2B" stroke-width="4"/>
+      <path d="M12 58h56v22H12Z" fill="#C4532D"/>
+      <circle cx="60" cy="18" r="11" fill="#FBF1E2"/>
+      <path d="M26 30v14" stroke="#FBF1E2" stroke-width="5" stroke-linecap="round"/>
+    </symbol>
+
+    <symbol id="estrela" viewBox="0 0 100 100">
+      <path d="M50 6l12 30 32 2-25 20 9 32-28-18-28 18 9-32L6 38l32-2Z" fill="#D9B45F" stroke="#9C7A2E" stroke-width="4" stroke-linejoin="round"/>
+    </symbol>
+
+    <symbol id="laco" viewBox="0 0 140 110">
+      <g fill="none" stroke="#5C3522" stroke-width="7" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M70 40C50 10 14 12 18 40c4 26 38 16 52 0Z"/>
+        <path d="M70 40c20-30 56-28 52 0-4 26-38 16-52 0Z"/>
+        <path d="M66 46 44 100M74 46l22 54"/>
+      </g>
+      <circle cx="70" cy="42" r="8" fill="#5C3522"/>
+    </symbol>
+
+    <symbol id="selo-sol" viewBox="0 0 120 120">
+      <g fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="round">
+        <path d="M60 14v14M60 92v14M14 60h14M92 60h14M28 28l10 10M82 82l10 10M92 28 82 38M38 82 28 92"/>
+        <circle cx="60" cy="60" r="20"/>
+      </g>
+    </symbol>
+
+    <symbol id="icone-check" viewBox="0 0 24 24">
+      <path d="M5 12.5 10 17.5 19 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="icone-local" viewBox="0 0 24 24">
+      <path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+      <circle cx="12" cy="9.5" r="2.6" fill="none" stroke="currentColor" stroke-width="2"/>
+    </symbol>
+    <symbol id="icone-musica" viewBox="0 0 24 24">
+      <path d="M9 18V5l11-2v13" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+      <circle cx="6.5" cy="18" r="2.5" fill="none" stroke="currentColor" stroke-width="2"/>
+      <circle cx="17.5" cy="16" r="2.5" fill="none" stroke="currentColor" stroke-width="2"/>
+    </symbol>
+  </svg>
+
+  <!-- ===== Botão de som ===== -->
+  <button class="botao-som" id="botaoSom" type="button" aria-label="Desligar música" hidden>
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M4 9h4l5-4v14l-5-4H4Z" fill="currentColor"/>
+      <path class="onda" d="M16.5 8.5a5 5 0 0 1 0 7M19 6a8.5 8.5 0 0 1 0 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      <path class="mudo" d="M16 9l6 6M22 9l-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+    </svg>
+  </button>
+
+  <audio id="musica" src="assets/musica.mp3" loop preload="auto"></audio>
+
+  <!-- ===== TELA 1: envelope fechado ===== -->
+  <section class="tela tela-envelope" id="telaEnvelope" aria-label="Convite fechado">
+    <svg class="deco d-sol"><use href="#sol"/></svg>
+    <svg class="deco d-laranja"><use href="#laranja"/></svg>
+    <svg class="deco d-estrela-a"><use href="#estrela"/></svg>
+    <svg class="deco d-catavento"><use href="#catavento"/></svg>
+    <svg class="deco d-estrela-b"><use href="#estrela"/></svg>
+
+    <h1 class="titulo-envelope">Tem um convite<br>pra você</h1>
+
+    <div class="envelope" id="envelope">
+      <div class="envelope-corpo"></div>
+      <div class="envelope-aba"></div>
+      <button class="selo" id="selo" type="button" aria-label="Abrir o convite">
+        <span class="selo-metade selo-esq"><svg><use href="#selo-sol"/></svg></span>
+        <span class="selo-metade selo-dir"><svg><use href="#selo-sol"/></svg></span>
+      </button>
+    </div>
+
+    <p class="dica">toque no selo pra abrir</p>
+  </section>
+
+  <!-- ===== TELA 2: convite aberto ===== -->
+  <main class="tela tela-convite" id="telaConvite" aria-hidden="true" tabindex="-1">
+    <div class="folha">
+    <svg class="deco d2-sol"><use href="#sol"/></svg>
+    <svg class="deco d2-laco"><use href="#laco"/></svg>
+    <svg class="deco d2-picole"><use href="#picole"/></svg>
+    <svg class="deco d2-laranja"><use href="#laranja"/></svg>
+    <svg class="deco d2-estrela"><use href="#estrela"/></svg>
+    <svg class="deco d2-catavento"><use href="#catavento"/></svg>
+
+    <header class="cabecalho">
+      <h2 class="nome">Gabi</h2>
+      <div class="numero">
+        <img class="balao" src="assets/balao20.webp" alt="20 anos" width="470" height="386">
+      </div>
+      <p class="subtitulo">o último capítulo da infância</p>
+    </header>
+
+    <figure class="polaroid">
+      <img src="assets/gabi.jpg" alt="Gabi pequenininha, sorrindo em pé ao lado de uma TV antiga" width="720" height="1087">
+      <figcaption>a menininha da foto cresceu</figcaption>
+    </figure>
+
+    <p class="mensagem">
+      Vinte anos de histórias, e a infância chegou à última página.
+      Quero fechar esse capítulo com sol, música e com cada um de vocês,
+      que fizeram parte dele.
+    </p>
+
+    <div class="data" aria-label="Sábado, 14 de novembro de 2026, a partir das 13 horas">
+      <span class="data-mes">novembro</span>
+      <div class="data-linha">
+        <span class="data-lado">a partir<br>das 13h</span>
+        <span class="data-dia">14</span>
+        <span class="data-lado">sábado</span>
+      </div>
+      <span class="data-ano">2026</span>
+    </div>
+
+    <div class="contagem" id="contagem">
+      <div class="contagem-item"><span id="cDias">--</span><small>dias</small></div>
+      <div class="contagem-item"><span id="cHoras">--</span><small>horas</small></div>
+      <div class="contagem-item"><span id="cMin">--</span><small>min</small></div>
+      <div class="contagem-item"><span id="cSeg">--</span><small>seg</small></div>
+    </div>
+
+    <nav class="acoes" aria-label="Ações do convite">
+      <a class="acao" id="linkConfirmar" target="_blank" rel="noopener">
+        <span class="acao-circulo"><svg><use href="#icone-check"/></svg></span>
+        <span class="acao-texto">Confirmar<br>presença</span>
+      </a>
+      <a class="acao" id="linkLocal" target="_blank" rel="noopener">
+        <span class="acao-circulo"><svg><use href="#icone-local"/></svg></span>
+        <span class="acao-texto">Local<br>da festa</span>
+      </a>
+      <a class="acao" id="linkPlaylist" target="_blank" rel="noopener">
+        <span class="acao-circulo"><svg><use href="#icone-musica"/></svg></span>
+        <span class="acao-texto">Playlist<br>da festa</span>
+      </a>
+    </nav>
+
+    <p class="endereco">Rua Leone Décimo Dal Negro, 440<br>São José dos Pinhais, PR</p>
+    <p class="rodape">coloca sua música na playlist, ela vai tocar na festa!</p>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
