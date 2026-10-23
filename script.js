@@ -8,7 +8,7 @@ const CONFIG = {
   mensagemWhatsapp: "Oi! Confirmo minha presença no aniversário de 20 anos da Gabi! 🧡",
   endereco: "Rua Leone Décimo Dal Negro, 440, São José dos Pinhais, PR",
   playlist: "https://open.spotify.com/playlist/5MaOGSL6HclcesfUGqnuGZ?si=zH2oFz7BTTW6oaxx_TpZuA&utm_source=copy-link&pt=8c03459169b79f03438d899167aef3ea&pi=eIUnNLvDTvyWM",
-  dataFesta: "2026-11-14T13:00:00-03:00", // horário de Brasília
+  dataFesta: "2026-11-14T14:00:00-03:00", // horário de Brasília
   volume: 0.3, // 0 a 1
 
   // Link do Apps Script da planilha de presença (veja o arquivo planilha-presenca.gs)
