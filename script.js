@@ -7,7 +7,7 @@ const CONFIG = {
   whatsapp: "5541987237109", // 55 + DDD + número, só dígitos
   mensagemWhatsapp: "Oi! Confirmo minha presença no aniversário de 20 anos da Gabi! 🧡",
   endereco: "Rua Leone Décimo Dal Negro, 440, São José dos Pinhais, PR",
-  playlist: "https://open.spotify.com/playlist/5MaOGSL6HclcesfUGqnuGZ?si=zH2oFz7BTTW6oaxx_TpZuA&utm_source=copy-link&pt=8c03459169b79f03438d899167aef3ea&pi=eIUnNLvDTvyWM",
+  playlist: "https://open.spotify.com/playlist/5MaOGSL6HclcesfUGqnuGZ?si=oEltRBuaQ-68g60RJJUbjg&utm_source=copy-link&pt=0c5efc1fd83c695ec27b1af8aece8c66&pi=vYFDfmNGROavv",
   dataFesta: "2026-11-14T14:00:00-03:00", // horário de Brasília
   volume: 0.3, // 0 a 1
 
